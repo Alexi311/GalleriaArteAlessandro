@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+  <definition name="baseLayout" template="/pages/baseLayout.jsp">
+  	<put-attribute name="title"  value="Template"/>
+    <put-attribute name="header"   value="/pages/header.jsp"/>
+    <put-attribute name="body"   value="/pages/body.jsp"/>
+    <put-attribute name="footer" value="/pages/footer.jsp"/>
+  </definition>
+  
+  <definition name="error" extends="baseLayout">
+  	<put-attribute name="title" value="Error"/>
+  	<put-attribute name="body" value="/pages/error.jsp"/>
+  </definition>
+  
+  <definition name="home" extends="baseLayout">
+  	<put-attribute name="title" value="HomePage"/>
+  	<put-attribute name="body" value="/pages/home.jsp"/>
+  </definition>
+  
+  <definition name="opere" extends="baseLayout">
+  	<put-attribute name="title" value="Le Opere"/>
+  	<put-attribute name="body" value="/pages/elencoOpere.jsp"/>
+  </definition>
+  
+  <definition name="quadriOrdineAlfabetico" extends="baseLayout">
+  	<put-attribute name="title" value="Le Opere"/>
+  	<put-attribute name="body" value="/pages/elencoOpere.jsp"/>
+  </definition>
+  
+  <definition name="quadriOrdineAnnoRealizzazione" extends="baseLayout">
+  	<put-attribute name="title" value="Le Opere"/>
+  	<put-attribute name="body" value="/pages/elencoOpere.jsp"/>
+  </definition>
+  
+  <definition name="autori" extends="baseLayout">
+  	<put-attribute name="title" value="Gli Autori"/>
+  	<put-attribute name="body" value="/pages/elencoAutori.jsp"/>
+  </definition>
+  
+  <definition name="autoriOrdineAlfabetico" extends="baseLayout">
+  	<put-attribute name="title" value="Gli Autori"/>
+  	<put-attribute name="body" value="/pages/elencoAutori.jsp"/>
+  </definition>
+  
+  <definition name="autoriOrdineDataNascita" extends="baseLayout">
+  	<put-attribute name="title" value="Gli Autori"/>
+  	<put-attribute name="body" value="/pages/elencoAutori.jsp"/>
+  </definition>
+  
+  
+  <definition name="galleria" extends="baseLayout">
+  	<put-attribute name="title" value="La Galleria"/>
+  	<put-attribute name="body" value="/pages/galleria.jsp"/>
+  </definition>
+  
+  <definition name="eventi" extends="baseLayout">
+  	<put-attribute name="title" value="Eventi"/>
+  	<put-attribute name="body" value="/pages/eventi.jsp"/>
+  </definition>
+  
+  <definition name="adminErroreLogin" extends="baseLayout">
+  	<put-attribute name="title" value="HomePage"/>
+  	<put-attribute name="body" value="/pages/home.jsp"/>
+  </definition>
+ 
+</tiles-definitions>

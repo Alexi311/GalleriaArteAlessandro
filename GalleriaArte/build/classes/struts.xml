@@ -1,0 +1,157 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+<constant name="struts.custom.i18n.resources" value="query" />
+	<package name="default" extends="struts-default">
+		<result-types>
+  <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult"/>
+</result-types>
+		
+		
+		<global-results>
+			<result name="error">/pages/error.jsp</result>
+		</global-results>
+
+		
+		
+		<action name="welcome">
+			<result type="tiles">home</result>
+		</action>
+		
+		<action name="opere" class="action.OpereAction" method="getElencoOpere">
+			<result name="success" type="tiles">opere</result>
+			<result name="error" type="tiles">error</result>
+		</action>
+		
+		<action name="quadriOrdineAlfabetico" class="action.OpereAction" method="getElencoOpereOrdineAlfabetico">
+			<result name="success" type="tiles">quadriOrdineAlfabetico</result>
+			<result name="error" type="tiles">error</result>
+		</action>
+		
+		<action name="quadriOrdineAnnoRealizzazione" class="action.OpereAction" method="getElencoOpereOrdineAnnoRealizzazione">
+			<result name="success" type="tiles">quadriOrdineAnnoRealizzazione</result>
+			<result name="error" type="tiles">error</result>
+		</action>
+		
+		<action name="autori" class="action.AutoriAction" method="getElencoAutori">
+			<result name="success" type="tiles">autori</result>
+			<result name="error" type="tiles">error</result>
+		</action>
+		
+		<action name="autoriOrdineAlfabetico" class="action.AutoriAction" method="getElencoAutoriOrdineAlfabetico">
+			<result name="success" type="tiles">autoriOrdineAlfabetico</result>
+			<result name="error" type="tiles">error</result>
+		</action>
+		
+		<action name="autoriOrdineDataNascita" class="action.AutoriAction" method="getElencoAutoriOrdineDataNascita">
+			<result name="success" type="tiles">autoriOrdineDataNascita</result>
+			<result name="error" type="tiles">error</result>
+		</action>
+		
+		
+		<action name="galleria">
+			<result type="tiles">galleria</result>
+		</action>
+		
+		<action name="eventi">
+			<result type="tiles">eventi</result>
+		</action>
+		
+		<action name="admin" class="action.AdminAction" method="login">
+			<result name="success" type="redirect">/pages/adminHomePage.jsp</result>
+			<result name="erroreLogin" type="tiles">adminErroreLogin</result>
+			<result name="error" type="tiles">error</result>
+		</action>
+		
+		<action name="gestioneAutori" class="action.AutoriAction" method="getElencoAutori">
+			<result name="success">/pages/gestioneAutori.jsp</result>
+		</action>
+		
+		<action name="gestioneQuadri" class="action.OpereAction" method="getElencoOpere">
+			<result name="success">/pages/gestioneQuadri.jsp</result>
+		</action>
+		
+		<action name="gestioneAdmin" class="action.AdminAction" method="getElencoAmministratori">
+			<result name="success">/pages/gestioneAmministratori.jsp</result>
+		</action>
+		
+		<action name="aggiungiAutore">
+			<result>/pages/aggiungiAutore.jsp</result>
+		</action>
+		
+		<action name="aggiungiQuadro" class="action.AutoriAction" method="caricaCombo">
+			<result>/pages/aggiungiQuadro.jsp</result>
+		</action>
+		
+		<action name="aggiungiAmministratore">
+			<result>/pages/aggiungiAmministratore.jsp</result>
+		</action>
+		
+		<action name="insertAutore" class="action.AutoriAction" method="insertAutore">
+			<result name="success">/pages/gestioneAutori.jsp</result>
+			<result name="error" type="tiles">error</result>
+		</action>
+		
+		<action name="modificaAutore" class="action.AutoriAction" method="modificaAutore">
+			<result name="success">/pages/modificaAutore.jsp</result>
+			<result name="error" type="tiles">error</result>
+		</action>
+		
+		<action name="updateAutore" class="action.AutoriAction" method="updateAutore">
+			<result name="success">/pages/gestioneAutori.jsp</result>
+			<result name="error" type="tiles">error</result>
+		</action>
+		
+		<action name="cancellaAutore" class="action.AutoriAction" method="cancellaAutore">
+			<result name="success">/pages/gestioneAutori.jsp</result>
+			<result name="error" type="tiles">error</result>
+		</action>
+		
+		<action name="insertQuadro" class="action.OpereAction" method="insertQuadro">
+			<result name="success">/pages/gestioneQuadri.jsp</result>
+			<result name="error" type="tiles">error</result>
+		</action>
+		
+		<action name="modificaQuadro" class="action.OpereAction" method="modificaQuadro">
+			<result name="success">/pages/modificaQuadro.jsp</result>
+			<result name="error" type="tiles">error</result>
+		</action>
+		
+		<action name="updateQuadro" class="action.OpereAction" method="updateQuadro">
+			<result name="success">/pages/gestioneQuadri.jsp</result>
+			<result name="error" type="tiles">error</result>
+		</action>
+		
+		<action name="cancellaQuadro" class="action.OpereAction" method="cancellaQuadro">
+			<result name="success">/pages/gestioneQuadri.jsp</result>
+			<result name="error" type="tiles">error</result>
+		</action>
+		
+		<action name="insertAmministratore" class="action.AdminAction" method="insertAmministratore">
+			<result name="success">/pages/gestioneAmministratori.jsp</result>
+			<result name="error" type="tiles">error</result>
+		</action>
+		
+		<action name="modificaAmministratore" class="action.AdminAction" method="modificaAmministratore">
+			<result name="success">/pages/modificaAmministratore.jsp</result>
+			<result name="error" type="tiles">error</result>
+		</action>
+		
+		<action name="updateAmministratore" class="action.AdminAction" method="updateAmministratore">
+			<result name="success">/pages/gestioneAmministratori.jsp</result>
+			<result name="error" type="tiles">error</result>
+		</action>
+		
+		<action name="cancellaAmministratore" class="action.AdminAction" method="cancellaAmministratore">
+			<result name="success">/pages/gestioneAmministratori.jsp</result>
+			<result name="error" type="tiles">error</result>
+		</action>
+		
+		<action name="adminRitorno">
+			<result>/pages/adminHomePage.jsp</result>
+		</action>
+		
+	</package>
+</struts>
