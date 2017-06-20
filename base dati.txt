@@ -1,0 +1,42 @@
+create table autore
+(             
+		
+                cognome varchar(50),
+                nome varchar(50),
+                data_di_nascita date,
+                data_di_morte date,
+                nazionalita varchar(30),
+		id numeric(5) primary key
+);
+ 
+create table quadro
+(
+                titolo varchar(100),
+                descrizione varchar(100),
+                autore numeric(10) references autore(id) ON UPDATE CASCADE ON DELETE CASCADE,
+                tecnica varchar(100),
+                dimensioni varchar(100),
+                anno_realizzazione varchar(4),
+		id numeric(5) primary key,
+		autore numeric(5)
+);
+ 
+create table amministratore
+(
+		username varchar(15),
+                password varchar(15),
+                nome varchar(50),
+                cognome varchar(50),
+                matricola varchar(10)
+                primary key(matricola, username)
+);
+
+insert into amministratore values('admin', 'admin', 'nome1', 'cognome1', 'matricola1');
+
+insert into quadro values('Alcuni Cerchi', 'Alcuni Cerchi di Kandinskij','images/alcuniCerchi.jpg','Olio su Tela','140,3x140,7', '1926', '1', '1');
+insert into quadro values('La Sposa del Vento', 'La Sposa del Vento di Kokoschka','images/laSposaDelVento.jpg','Olio su Tela','181x220', '1914', '2', '2');
+insert into quadro values('Notte Stellata', 'Notte Stellata di Van Gogh','images/notteStellata.jpg','Olio su Tela','72x92', '1889', '3', '3');
+
+insert into autore values('Kandinskij', 'Vasilij', '1866-12-04', '1944-12-13', 'Russa', 1);
+insert into autore values('Kokoschka', 'Oskar', '1886-03-01','1980-02-22', 'Austriaca', 2);
+insert into autore values('Van Gogh', Vincent, '1853-03-30','1890-07-29', 'Olandese', 3);
